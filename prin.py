@@ -67,7 +67,7 @@ country_data = {
         "population": "60,244,639 명",
         "languages": "이탈리아어"
     },
-    # 기타 국가를 원하는 만큼 추가 가능
+    # 필요한 경우 추가 국가를 여기에 추가할 수 있습니다.
 }
 
 # Streamlit 앱 제목
@@ -76,9 +76,13 @@ st.title("국가 정보 조회기")
 # 국가 선택 옵션
 country_selected = st.selectbox("국가를 선택하세요:", list(country_data.keys()))
 
-# 선택된 국가 정보
+# 선택된 국가 정보 표시
+if country_selected:
+    capital = country_data[country_selected]["capital"]
+    population = country_data[country_selected]["population"]
+    languages = country_data[country_selected]["languages"]
 
-# 선택한 유형에 대한 설명 표시
-st.write("당신이 선택한 국가는 **{}** 입니다.".format(country_data))
-st.write("설명: {}".format(country_data[capital, populatiom, languages]))
-
+    st.subheader(f"{country_selected} 정보")
+    st.write(f"**수도**: {capital}")
+    st.write(f"**인구**: {population}")
+    st.write(f"**사용 언어**: {languages}")
