@@ -77,3 +77,8 @@ st.title("국가 정보 조회기")
 country_selected = st.selectbox("국가를 선택하세요:", list(country_data.keys()))
 
 # 선택된 국가 정보
+
+# 선택한 유형에 대한 설명 표시
+st.write("당신이 선택한 국가는 **{}** 입니다.".format(country_data))
+st.write("설명: {}".format(country_data[capital, populatiom, languages]))
+
